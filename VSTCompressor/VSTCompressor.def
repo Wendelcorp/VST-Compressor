@@ -1,0 +1,4 @@
+LIBRARY YOURPROJECTNAME
+EXPORTS
+VSTPluginMain 
+main=VSTPluginMain
