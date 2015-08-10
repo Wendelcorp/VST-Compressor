@@ -53,7 +53,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WINDOWS;_WINDOWS;WIN32;_USRDLL;_USE_MATH_DEFINES;_CRT_SECURE_NO_DEPRECATE</PreprocessorDefinitions>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <AdditionalIncludeDirectories>C:\Users\Mikhail\Development\VST Plugins\VST Compressor\Steinberg VST SDK;C:\Users\Mikhail\Development\VST Plugins\VST Compressor\Steinberg VST SDK\public.sdk\source\vst2.x;C:\Users\Mikhail\Development\VST Plugins\VST Compressor\VSTCompressor</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Steinberg VST SDK;$(SolutionDir)\Steinberg VST SDK\public.sdk\source\vst2.x;$(SolutionDir)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
