@@ -23,13 +23,15 @@
     <PlatformToolset>v120</PlatformToolset>
     <CLRSupport>false</CLRSupport>
     <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v120</PlatformToolset>
-    <CLRSupport>true</CLRSupport>
-    <CharacterSet>Unicode</CharacterSet>
+    <CLRSupport>false</CLRSupport>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -43,27 +45,33 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <GenerateManifest>false</GenerateManifest>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <EnableManagedIncrementalBuild>false</EnableManagedIncrementalBuild>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WINDOWS;_WINDOWS;WIN32;_USRDLL;_USE_MATH_DEFINES;_CRT_SECURE_NO_DEPRECATE</PreprocessorDefinitions>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PreprocessorDefinitions>WIN32;WINDOWS=1;DEVELOPMENT=1;_CRT_SECURE_NO_DEPRECATE=1</PreprocessorDefinitions>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
       <AdditionalIncludeDirectories>$(SolutionDir)\Steinberg VST SDK;$(SolutionDir)\Steinberg VST SDK\public.sdk\source\vst2.x;$(SolutionDir)</AdditionalIncludeDirectories>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <DisableLanguageExtensions>false</DisableLanguageExtensions>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <BrowseInformation>true</BrowseInformation>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>shell32.lib;msvcrtd.lib;ole32.lib;gdi32.lib;User32.lib;advapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <IgnoreSpecificDefaultLibraries>libcmt.lib;libcmtd.lib;msvcrt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
       <ModuleDefinitionFile>VSTCompressor.def</ModuleDefinitionFile>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <SubSystem>Windows</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -86,33 +94,19 @@
     <ClInclude Include="..\..\Steinberg VST SDK\pluginterfaces\vst2.x\vstfxstore.h" />
     <ClInclude Include="..\Steinberg VST SDK\pluginterfaces\vst2.x\aeffect.h" />
     <ClInclude Include="..\Steinberg VST SDK\pluginterfaces\vst2.x\aeffectx.h" />
-    <ClInclude Include="..\Steinberg VST SDK\pluginterfaces\vst2.x\vstfxstore.h" />
     <ClInclude Include="..\Steinberg VST SDK\public.sdk\source\vst2.x\aeffeditor.h" />
     <ClInclude Include="..\Steinberg VST SDK\public.sdk\source\vst2.x\audioeffect.h" />
     <ClInclude Include="..\Steinberg VST SDK\public.sdk\source\vst2.x\audioeffectx.h" />
-    <ClInclude Include="resource.h" />
-    <ClInclude Include="Stdafx.h" />
     <ClInclude Include="VSTCompressor.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Steinberg VST SDK\public.sdk\source\vst2.x\audioeffect.cpp" />
     <ClCompile Include="..\Steinberg VST SDK\public.sdk\source\vst2.x\audioeffectx.cpp" />
     <ClCompile Include="..\Steinberg VST SDK\public.sdk\source\vst2.x\vstplugmain.cpp" />
-    <ClCompile Include="AssemblyInfo.cpp" />
-    <ClCompile Include="Stdafx.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-    </ClCompile>
     <ClCompile Include="VSTCompressor.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="app.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="app.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="VSTCompressor.def" />
