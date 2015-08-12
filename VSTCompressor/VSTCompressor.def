@@ -1,4 +1,4 @@
-LIBRARY YOURPROJECTNAME
+LIBRARY VSTCompressor
 EXPORTS
 VSTPluginMain 
 main=VSTPluginMain
