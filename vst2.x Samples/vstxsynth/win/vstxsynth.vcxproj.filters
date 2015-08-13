@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\vst2.x">
+      <UniqueIdentifier>{1ab85bf1-6c8a-45fe-963c-e35119791798}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interfaces">
+      <UniqueIdentifier>{3686249c-2d86-457e-b9e2-176aa891b7d2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\source\gmnames.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\vstxsynth.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\source\vst2.x\aeffeditor.h">
+      <Filter>Source Files\vst2.x</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\source\vst2.x\audioeffect.h">
+      <Filter>Source Files\vst2.x</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\source\vst2.x\audioeffectx.h">
+      <Filter>Source Files\vst2.x</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\pluginterfaces\vst2.x\aeffect.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\pluginterfaces\vst2.x\aeffectx.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\pluginterfaces\vst2.x\vstfxstore.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\source\vstxsynth.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\vstxsynthproc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\source\vst2.x\audioeffect.cpp">
+      <Filter>Source Files\vst2.x</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\source\vst2.x\audioeffectx.cpp">
+      <Filter>Source Files\vst2.x</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\source\vst2.x\vstplugmain.cpp">
+      <Filter>Source Files\vst2.x</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\resource\vstxsynth.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\resource\vstxsynth.vstxml">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>
