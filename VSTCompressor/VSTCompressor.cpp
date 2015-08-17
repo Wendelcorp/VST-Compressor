@@ -1,8 +1,59 @@
 #include "VSTCompressor.h"
 
+//Function to create an instance of the effect
 AudioEffect* createEffectInstance(audioMasterCallback audioMaster) {
 	return new VSTCompressor(audioMaster);
 }
+
+// Constructor
+VSTCompressor::VSTCompressor(audioMasterCallback audioMaster)
+	: AudioEffectX(audioMaster, 1, NUM_PARAMS)	// 1 program, 0 parameters
+{
+	setNumInputs(2);		// stereo in
+	setNumOutputs(2);		// stereo out
+	setUniqueID('Comp');	// identify
+	canProcessReplacing();	// supports replacing output
+	canDoubleReplacing();	// supports double precision processing
+
+	//fGain = 1.f;			// default to 0 dB
+	vst_strncpy(programName, "Default", kVstMaxProgNameLen);	// default program name
+}
+
+
+// Default destructor
+VSTCompressor::~VSTCompressor() {
+}
+
+// Set Program Name Function
+void VSTCompressor::setProgramName(char* name)
+{
+	vst_strncpy(programName, name, kVstMaxProgNameLen);
+}
+
+// Get Program Name function
+void VSTCompressor::getProgramName(char* name)
+{
+	vst_strncpy(name, programName, kVstMaxProgNameLen);
+}
+
+// Proccessing function
+void VSTCompressor::processReplacing(float** inputs, float** outputs, VstInt32 sampleFrames)
+{
+	float* in1 = inputs[0];
+	float* in2 = inputs[1];
+	float* out1 = outputs[0];
+	float* out2 = outputs[1];
+
+	while (--sampleFrames >= 0)
+	{
+		(*out1++) = (*in1++);
+		(*out2++) = (*in2++);
+	}
+}
+
+
+/*
+
 
 VSTCompressor::VSTCompressor(audioMasterCallback audioMaster) :
 AudioEffectX(audioMaster, 0, NUM_PARAMS) {
@@ -13,9 +64,6 @@ AudioEffectX(audioMaster, 0, NUM_PARAMS) {
 	*cntrl2 = 1.0;
 	*knee = 0.0;
 
-}
-
-VSTCompressor::~VSTCompressor() {
 }
 
 void VSTCompressor::processReplacing(float **inputs, float **outputs,
@@ -50,3 +98,4 @@ void VSTCompressor::processReplacing(float **inputs, float **outputs,
 	*out1 = (*in1) * (*cntrl1);
 	*out2 = (*in2) * (*cntrl2);
 }
+*/
