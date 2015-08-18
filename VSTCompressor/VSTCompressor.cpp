@@ -16,6 +16,14 @@ VSTCompressor::VSTCompressor(audioMasterCallback audioMaster)
 	canDoubleReplacing();	// supports double precision processing
 
 	//fGain = 1.f;			// default to 0 dB
+	// Parameters
+	ratio = 10.0;
+	thresh = 0.5;
+	makeup = 4.0;
+	cntrl1 = 1.0;
+	cntrl2 = 1.0;
+	knee = 0.0;
+
 	vst_strncpy(programName, "Default", kVstMaxProgNameLen);	// default program name
 }
 
@@ -46,8 +54,20 @@ void VSTCompressor::processReplacing(float** inputs, float** outputs, VstInt32 s
 
 	while (--sampleFrames >= 0)
 	{
-		(*out1++) = (*in1++);
-		(*out2++) = (*in2++);
+		
+		// Set control voltages
+		if (*in1 > thresh){
+			cntrl1 = thresh * ((*in1 - thresh) / (ratio));
+		}
+
+		if (*in2 > thresh){
+			cntrl2 = thresh * ((*in2 - thresh) / (ratio));
+		}
+
+
+		// output sound
+		(*out1++) = (*in1++) * (makeup);
+		(*out2++) = (*in2++) * (makeup);
 	}
 }
 

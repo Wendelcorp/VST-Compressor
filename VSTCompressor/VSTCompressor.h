@@ -20,13 +20,13 @@ public:
 	virtual void getProgramName(char* name);
 
 protected:
-	float* ratio;			// Compression ratio
-	float* thresh;			// Threshold
-	float* makeup;			// Make-up gain
+	float ratio;			// Compression ratio
+	float thresh;			// Threshold
+	float makeup;			// Make-up gain
 	// Store control gains for L/R channels
-	float* cntrl1;
-	float* cntrl2;
-	float* knee;		// Knee width
+	float cntrl1;
+	float cntrl2;
+	float knee;		// Knee width
 
 	// Program name
 	char programName[kVstMaxProgNameLen + 1];
