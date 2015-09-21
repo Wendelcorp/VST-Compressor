@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\vst2.x">
+      <UniqueIdentifier>{d9c3339f-b5c1-4f75-9c20-96570f96d13b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\vstgui">
+      <UniqueIdentifier>{4f3ffcfe-6e89-421f-857a-32175992672c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\editor">
+      <UniqueIdentifier>{4ae75290-3d41-470b-bd07-2a26de74bbbc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interfaces">
+      <UniqueIdentifier>{6693c940-c19e-4414-b678-6116987dbb85}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="achorus.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="achorusmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\vst2.x\audioeffect.cpp">
+      <Filter>Source Files\vst2.x</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\vst2.x\audioeffectx.cpp">
+      <Filter>Source Files\vst2.x</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\vst2.x\vstplugmain.cpp">
+      <Filter>Source Files\vst2.x</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\vstgui.sf\vstgui\aeffguieditor.cpp">
+      <Filter>Source Files\vstgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\vstgui.sf\vstgui\vstcontrols.cpp">
+      <Filter>Source Files\vstgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\vstgui.sf\vstgui\vstgui.cpp">
+      <Filter>Source Files\vstgui</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\sdeditor.cpp">
+      <Filter>Source Files\editor</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="achorus.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\vst2.x\aeffeditor.h">
+      <Filter>Source Files\vst2.x</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\vst2.x\audioeffect.h">
+      <Filter>Source Files\vst2.x</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\vst2.x\audioeffectx.h">
+      <Filter>Source Files\vst2.x</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\vstgui.sf\vstgui\aeffguieditor.h">
+      <Filter>Source Files\vstgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\vstgui.sf\vstgui\vstcontrols.h">
+      <Filter>Source Files\vstgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\vstgui.sf\vstgui\vstgui.h">
+      <Filter>Source Files\vstgui</Filter>
+    </ClInclude>
+    <ClInclude Include="editor\sdeditor.h">
+      <Filter>Source Files\editor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\pluginterfaces\vst2.x\aeffect.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\pluginterfaces\vst2.x\aeffectx.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\pluginterfaces\vst2.x\vstfxstore.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="editor\resources\surrounddelay.rc">
+      <Filter>Source Files\editor</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
